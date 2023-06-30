@@ -1,3 +1,6 @@
+<!-- <mat-toolbar>
+  <span>My Application</span>
+</mat-toolbar>
 <mat-sidenav-container class="root-container">
   <mat-sidenav mode="side" opened>
     <ul>
@@ -10,4 +13,33 @@
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+
+
+
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">Home</h1>
+</mat-toolbar>
+<div class="root-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="'over'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" (click)="snav.toggle()">
+      <mat-nav-list>
+        <ul>
+          <li><a routerLink="add-device">Add Controller</a></li>
+          <li><a routerLink="/">Controller List</a></li>
+          <li><a routerLink="">My Account</a></li>
+          <li><a routerLink="">System Settings</a></li>
+        </ul>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
