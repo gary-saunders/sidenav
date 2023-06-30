@@ -1,0 +1,15 @@
+<mat-sidenav-container class="root-container">
+  <mat-sidenav mode="side" opened>
+    <ul>
+      <li><a routerLink="./">Dashboard</a></li>
+      <li><a routerLink="scheduling">Scheduling</a></li>
+      <li><a routerLink="stations">Stations</a></li>
+      <li><a routerLink="">Adjustments</a></li>
+      <li><a routerLink="">Remote Control</a></li>
+      <li><a routerLink="">Settings</a></li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
