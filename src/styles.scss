@@ -5,7 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main-container, .root-container{
   height: 100%;
-  .mat-sidenav{
+  .mat-sidenav, .mat-drawer{
     width: 384px;
   }
   .mat-sidenav-container {

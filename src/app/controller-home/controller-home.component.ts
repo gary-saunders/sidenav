@@ -13,13 +13,13 @@ export class ControllerHomeComponent implements OnInit {
   private _mobileQueryListener: () => void;
 
   constructor(private router:Router, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.mobileQuery = media.matchMedia('(max-width: 667px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+    this.mobileQuery.addEventListener('change', this._mobileQueryListener);
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeEventListener('change', this._mobileQueryListener);
   }
 
   ngOnInit(): void {
@@ -28,5 +28,6 @@ export class ControllerHomeComponent implements OnInit {
   goBackToControllerList(){
     this.router.navigate(['/']);
   }
+
 
 }
