@@ -8,12 +8,11 @@
     <mat-sidenav #snav [mode]="'over'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" (click)="snav.toggle()">
       <mat-nav-list>
-        <ul>
-          <li><a routerLink="add-device">Add Controller</a></li>
-          <li><a routerLink="/">Controller List</a></li>
-          <li><a routerLink="">My Account</a></li>
-          <li><a routerLink="">System Settings</a></li>
-        </ul>
+        <a mat-list-item routerLink="add-device">Add Controller</a>
+          <a mat-list-item routerLink="/">Controller List</a>
+          <a mat-list-item routerLink="">My Account</a>
+          <a mat-list-item routerLink="">System Settings</a>
+
       </mat-nav-list>
     </mat-sidenav>
 
